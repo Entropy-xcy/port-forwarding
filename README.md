@@ -73,3 +73,14 @@ python3 add-server.py $SERVER_IP $SERVER_IF $MAX_PORT > add-server.sh
 sudo ./add-server.sh
 ```
 （这一步会运行较长时间）
+
+## 完成
+如果一切顺利，目前所有的设置都已经完成了。最后测试一下速度。
+* 在Host端运行:
+```
+sudo iperf3 -s -p 800
+```
+* 在任意一台有网络的机器上测试转发速度:
+```
+iperf3 -c $SERVER_IP -p 800
+```
