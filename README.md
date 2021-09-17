@@ -13,7 +13,11 @@
 bash dep.sh
 ```
 ## 修改Client端和Server端SSH端口到52222
-过程略
+在Server端执行：
+```
+bash change-ssh-port.sh
+```
+请注意！！该脚本会将Server机的ssh端口改变到52222从而防止和穿透端口冲突。该脚本仅保证在Ubuntu2004默认ssh配置文件上可用。
 
 ## 常量申明
 ```
@@ -33,13 +37,13 @@ SERVER_IF=<server-nic-name>
 ## 创建Wiregaurd Overlay网络
 1. 在Server端执行：
 ```
-./wg-server.sh
+bash wg-server.sh
 ```
 这一步会输出一串key，我们将它称为server-pub-key。
 
 2. 在Client端执行：
 ```
-./wg-client.sh
+bash wg-client.sh
 ```
 这一步会输出client-pub-key。
 
@@ -62,7 +66,7 @@ ping 10.0.5.2 -c 3
 在Client上执行：
 ```
 python3 add-client.py $CLIENT_IP $HOST_IP $MAX_PORT > add-client.sh
-sudo ./add-client.sh
+bash add-client.sh
 ```
 （这一步会运行较长时间）
 
@@ -70,7 +74,7 @@ sudo ./add-client.sh
 在Server上执行：
 ```
 python3 add-server.py $SERVER_IP $SERVER_IF $MAX_PORT > add-server.sh
-sudo ./add-server.sh
+bash add-server.sh
 ```
 （这一步会运行较长时间）
 
