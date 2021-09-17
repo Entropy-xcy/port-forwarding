@@ -11,6 +11,7 @@
 ```
 python3 auto-deploy.py --help
 ```
+**注：auto-deploy脚本需要在一个同时可以访问到Server和Client的SSH端口的第三方机器上执行**
 部署案例：
 ```
 python3 auto-deploy.py --server_ip 8.8.8.8 --server_user root --server_pwd fuck_google --server_if eth0 --client_ip 10.0.0.1 --client_user myself --client_pwd passwordformyself --host_ip 10.0.0.2 --max_port 1000
