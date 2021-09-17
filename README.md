@@ -11,7 +11,7 @@
 ```
 python3 auto-deploy.py --help
 ```
-**注：auto-deploy脚本需要在一个同时可以访问到Server和Client的SSH端口的第三方机器上执行**
+**注：auto-deploy脚本需要在可以同时访问到Server和Client的SSH端口的机器上执行**
 
 部署案例：
 ```
